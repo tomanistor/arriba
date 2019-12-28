@@ -1,0 +1,35 @@
+{
+  "name": "arriba",
+  "version": "1.0.0",
+  "description": "A heckin' good platformer",
+  "main": "src/index.html",
+  "scripts": {
+    "build": "parcel build src/index.html --public-url ./",
+    "watch": "parcel watch src/index.html",
+    "start": "parcel serve src/index.html",
+    "clean": "rm -v dist/*",
+    "test": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomanistor/arriba.git"
+  },
+  "author": "Toma Nistor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomanistor/arriba/issues"
+  },
+  "dependencies": {
+    "phaser": "^3.17.0"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "eslint-config-semistandard": "^13.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
