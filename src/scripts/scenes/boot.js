@@ -31,7 +31,8 @@ export default {
             fill: '#ffffff'
           });
 
-    title.setOrigin(0.5);
+    title.setOrigin(.5);
+    title.setScale(10);
 
     this.tweens.add({
       targets: logo,
@@ -40,6 +41,13 @@ export default {
       ease: 'Power2',
       yoyo: true,
       loop: -1
+    });
+
+    this.tweens.add({
+      targets: title,
+      scale: 1,
+      duration: 1500,
+      ease: 'Bounce'
     });
   }
 };
