@@ -1,5 +1,8 @@
-import Phaser from 'phaser';
-import logo from "../../images/logo.jpg";
+import Phaser    from 'phaser';
+import game      from "../../app";
+import config    from "../config";
+import logo      from "../../images/logo.jpg";
+import hardpixel from "../../fonts/hardpixel.otf";
 
 export default {
   key: 'boot',
@@ -9,7 +12,26 @@ export default {
   },
 
   create: function() {
-    const logo = this.add.image(350, 433, 'logo');
+    const logo = this.add.image(600, 500, 'logo'),
+          title = this.add.text(config.width * .5, config.height * .5, config.title, {
+            font: '120px Hardpixel',
+            shadow: {
+              offsetX: -5,
+              offsetY: 5,
+              color: '#2DE2E6',
+              stroke: true,
+              fill: true
+            },
+            stroke: '#2DE2E6',
+            strokeThickness: 5,
+            fill: '#ffffff'
+          }),
+          credit = this.add.text(50, 550, `Created by ${config.author}`, {
+            font: '16px Hardpixel',
+            fill: '#ffffff'
+          });
+
+    title.setOrigin(0.5);
 
     this.tweens.add({
       targets: logo,

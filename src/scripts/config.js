@@ -3,11 +3,15 @@ import boot from './scenes/boot';
 
 export default {
   type: Phaser.AUTO,
-  width: 800,
+  width: 1200,
   height: 600,
   pixelArt: true,
   title: 'Arriba',
-  url: 'https://github.com/toma/arriba',
-  banner: { text: 'white', background: ['#FD7400', '#FFE11A', '#BEDB39', '#1F8A70', '#004358'] },
+  author: 'Toma Nistor',
+  url: 'https://github.com/tomanistor/arriba',
+  banner: {
+    text: 'white',
+    background: ['#FF6C11', '#FF3864', '#2DE2E6', '#261447', '#0D0221']
+  },
   scene: [boot]
 };
