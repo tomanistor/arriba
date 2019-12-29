@@ -10,6 +10,8 @@ export default {
   },
 
   create: function() {
+    const thisScene = this;
+
     // Image - Background
     const background = this.add.image(900, 500, 'background').setScale(2);
 
@@ -83,7 +85,7 @@ export default {
     this.tweens.add({
       targets: title,
       scale: 1,
-      duration: 1500,
+      duration: 1800,
       ease: 'Bounce'
     });
 
@@ -92,12 +94,11 @@ export default {
       targets: credit,
       delay: 1500,
       alpha: { start: 0, to: 1 },
-      duration: 1500,
-      ease: 'Power2'
+      duration: 3000,
+      ease: 'Power2',
+      onComplete: function() {
+        thisScene.scene.start('menu');
+      }
     });
-  },
-
-  // update: function() {
-  //   this.scene.start('menu');
-  // }
+  }
 };
