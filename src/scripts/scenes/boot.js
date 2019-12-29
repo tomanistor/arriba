@@ -13,8 +13,8 @@ export default {
 
   create: function() {
     const logo = this.add.image(600, 500, 'logo'),
-          title = this.add.text(config.width * .5, config.height * .5, config.title, {
-            font: '120px Hardpixel',
+          title = this.add.text(config.width * .5, config.height * .5, config.title + ' ', {
+            font: '120px Lazer84',
             shadow: {
               offsetX: -5,
               offsetY: 5,
@@ -27,7 +27,7 @@ export default {
             fill: '#ffffff'
           }),
           credit = this.add.text(50, 550, `Created by ${config.author}`, {
-            font: '16px Hardpixel',
+            font: '20px Hardpixel',
             fill: '#ffffff'
           });
 
