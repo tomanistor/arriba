@@ -12,10 +12,10 @@ export default {
     const background = this.add.image(900, 500, 'background').setScale(2);
 
     // Load Audio: Theme
-    this.sound.add('theme');
+    config.themeSong = this.sound.add('theme');
 
     // Play Audio: Theme
-    this.sound.play('theme', {
+    config.themeSong.play({
       seek: 64.5,
       // loop: true
     });

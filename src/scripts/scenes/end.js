@@ -3,13 +3,10 @@ import config from "../config";
 export default {
   key: 'end',
 
-
   preload: function() {
   },
 
   create: function() {
-    this.sound.add('theme').stop();
-
     // Flash: Background Color: #261447
     this.cameras.main.flash(1000, 38, 20, 71);
 

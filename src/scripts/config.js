@@ -5,6 +5,8 @@ import menu   from './scenes/menu';
 import play   from './scenes/play';
 import end    from './scenes/end';
 
+let themeSong;
+
 export default {
   type: Phaser.AUTO,
   width: 1200,
@@ -29,5 +31,6 @@ export default {
     menu,
     play,
     end
-  ]
+  ],
+  themeSong: themeSong
 };

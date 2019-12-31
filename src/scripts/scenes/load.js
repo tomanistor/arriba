@@ -41,7 +41,6 @@ export default {
     const rect = new Phaser.Geom.Rectangle(400, this.cameras.main.centerY, 400, 30);
     const gfx = this.add.graphics();
     this.load.on('progress', function(progress) {
-      console.log(progress)
       gfx
         .clear()
         .fillStyle('#261447')

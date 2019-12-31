@@ -30,9 +30,8 @@ export default {
   create: function() {
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
-      this.scene.start('end');
-
-      this.sound.add('theme').stop();
+      config.themeSong.stop();
+      this.scene.stop().run('end');
     }, this);
 
   },
