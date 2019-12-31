@@ -42,14 +42,14 @@ export default {
     texture.refresh();
 
     // Loading Bar
-    const rect = new Phaser.Geom.Rectangle(400, this.cameras.main.centerY, 400, 30);
+    const rect = new Phaser.Geom.Rectangle(0, config.height - 30, config.width, 30);
     const gfx = this.add.graphics();
     this.load.on('progress', function(progress) {
       gfx
         .clear()
-        .fillStyle('#261447')
+        .fillStyle(0x261447)
         .fillRectShape(rect)
-        .fillStyle('#2DE2E6')
+        .fillStyle(0x2DE2E6)
         .fillRect(rect.x, rect.y, progress * rect.width, rect.height);
     });
   },
