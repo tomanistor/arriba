@@ -9,8 +9,8 @@ export default {
     // Add Image: Background
     const background = this.add.image(900, 500, 'background').setScale(2);
 
-    // Load Audio: Theme
-    config.themeSong = this.sound.add('theme');
+    // Add Audio: Theme
+    config.themeSong = this.sound.add('song1');
 
     // Play Audio: Theme
     config.themeSong.play({

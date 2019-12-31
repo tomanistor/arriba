@@ -17,6 +17,14 @@ export default {
     const overlay = this.add.renderTexture(0, 0, config.width, config.height);
     overlay.fill(0x261447, 0.75);
 
+    // Add Audio: Ending
+    config.endSong = this.sound.add('song2');
+
+    // Play Audio: Ending
+    config.endSong.play({
+      seek: 47
+    });
+
     // Animate: Background
     this.tweens.timeline({
       tweens: [{
@@ -85,10 +93,12 @@ export default {
 
     // Next Scene: Menu
     this.input.keyboard.on('keydown-SPACE', function() {
-      this.scene.switch('menu');
+      config.endSong.stop();
+      this.scene.stop().run('menu');
     }, this);
     this.input.on('pointerdown', function () {
-      this.scene.switch('menu');
+      config.endSong.stop();
+      this.scene.stop().run('menu');
     }, this);
   }
 };

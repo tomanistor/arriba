@@ -5,7 +5,8 @@ import menu   from './scenes/menu';
 import play   from './scenes/play';
 import end    from './scenes/end';
 
-let themeSong;
+let themeSong,
+    endSong;
 
 export default {
   type: Phaser.AUTO,
@@ -38,5 +39,6 @@ export default {
     end
   ],
   backgroundColor: '#261447',
-  themeSong: themeSong
+  themeSong: themeSong,
+  endSong: endSong
 };

@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import config from "../config";
-import theme  from "../../audio/dust-to-dust-by-quixotic.mp3";
+import song1  from "../../audio/dust-to-dust-by-quixotic.mp3";
+import song2  from "../../audio/flashlight-by-morgan-willis.mp3";
+// import song3  from "../../audio/cruising-by-windows95.mp3";
 import dog    from "../../images/dog-running.png";
 import palm1  from "../../images/palm-1.png";
 import palm2  from "../../images/palm-2.png";
@@ -21,8 +23,10 @@ export default {
     this.load.image('palm3', palm3);
     this.load.image('palm4', palm4);
 
-    // Load Audio: Theme
-    this.load.audio('theme', theme);
+    // Load Audio
+    this.load.audio('song1', song1);
+    this.load.audio('song2', song2);
+    // this.load.audio('song3', song3);
 
     // Add: Gradient Background
     const texture = this.textures.createCanvas('gradient', config.width, config.height);
