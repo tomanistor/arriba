@@ -6,7 +6,7 @@ export default {
   create: function() {
     // console.log('Scene: menu');
 
-    const thisScene = this;
+    // const thisScene = this;
 
     // Add Image: Background
     const background = this.add.image(900, 500, 'background').setScale(2);
@@ -23,7 +23,7 @@ export default {
       },
       stroke: '#2DE2E6',
       strokeThickness: 5,
-      fill: '#ffffff'
+      fill: '#FFFFFF'
     }).setOrigin(0.5).setScale(10);
 
     // Add Text: Credit
@@ -38,10 +38,10 @@ export default {
       },
       stroke: '#261447',
       strokeThickness: 5,
-      fill: '#ffffff'
+      fill: '#FFFFFF'
     });
 
-    // Add Text: Play
+    // Add Text: Spacebar
     const play = this.add.text(config.width * .5, config.height * .75, '(spacebar)', {
       font: '48px Hardpixel',
       align: 'center',
@@ -126,5 +126,8 @@ export default {
     this.input.keyboard.on('keydown-SPACE', function() {
       this.scene.start('play');
     }, this);
-  },
+    this.input.on('pointerdown', function() {
+      this.scene.start('play');
+    }, this);
+  }
 };

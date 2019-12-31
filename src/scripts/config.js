@@ -3,6 +3,7 @@ import boot   from './scenes/boot';
 import load   from './scenes/load';
 import menu   from './scenes/menu';
 import play   from './scenes/play';
+import end    from './scenes/end';
 
 export default {
   type: Phaser.AUTO,
@@ -26,6 +27,7 @@ export default {
     boot,
     load,
     menu,
-    play
+    play,
+    end
   ]
 };
