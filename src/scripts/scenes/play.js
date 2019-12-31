@@ -28,15 +28,13 @@ export default {
   },
 
   create: function() {
-
-
-
-
-
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
       this.scene.start('end');
+
+      this.sound.add('theme').stop();
     }, this);
+
   },
 
   update: function() {
@@ -45,5 +43,5 @@ export default {
 
       return;
     }
-  },
+  }
 };

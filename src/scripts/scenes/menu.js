@@ -11,6 +11,15 @@ export default {
     // Add Image: Background
     const background = this.add.image(900, 500, 'background').setScale(2);
 
+    // Load Audio: Theme
+    this.sound.add('theme');
+
+    // Play Audio: Theme
+    this.sound.play('theme', {
+      seek: 64.5,
+      // loop: true
+    });
+
     // Add Text: Title
     const title = this.add.text(config.width * .5, config.height * .5, config.title + ' ', {
       font: '120px Lazer84',
@@ -58,7 +67,7 @@ export default {
     }).setOrigin(0.5);
 
     // Animate: Background
-    const timelineBackground = this.tweens.timeline({
+    this.tweens.timeline({
       tweens: [{
         targets: background,
         x: 800,
@@ -126,8 +135,9 @@ export default {
     this.input.keyboard.on('keydown-SPACE', function() {
       this.scene.start('play');
     }, this);
+
     this.input.on('pointerdown', function() {
       this.scene.start('play');
     }, this);
-  }
+  },
 };

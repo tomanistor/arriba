@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import config from "../config";
+import theme  from "../../audio/dust-to-dust-by-quixotic.mp3";
 import dog    from "../../images/dog-running.png";
 import palm1  from "../../images/palm-1.png";
 import palm2  from "../../images/palm-2.png";
@@ -13,17 +14,20 @@ export default {
     // Add Image: Background
     this.add.image(900, 500, 'background').setScale(2);
 
-    // Load Image: Dog
+    // Load Images
     this.load.image('dog', dog);
     this.load.image('palm1', palm1);
     this.load.image('palm2', palm2);
     this.load.image('palm3', palm3);
     this.load.image('palm4', palm4);
 
+    // Load Audio: Theme
+    this.load.audio('theme', theme);
+
     // Add: Gradient Background
-    let texture = this.textures.createCanvas('gradient', config.width, config.height);
-    let context = texture.getContext();
-    let gradient = context.createLinearGradient(0, 0, 0, config.height);
+    const texture = this.textures.createCanvas('gradient', config.width, config.height);
+    const context = texture.getContext();
+    const gradient = context.createLinearGradient(0, 0, 0, config.height);
 
     gradient.addColorStop(0, '#CA52D8');
     gradient.addColorStop(1, '#B292DE');
@@ -50,7 +54,7 @@ export default {
   create: function() {
     // console.log('Scene: load');
 
-    // Start Scene: Meun
+    // Start Scene: Menu
     this.scene.start('menu');
   }
 };

@@ -8,22 +8,28 @@ export default {
   },
 
   create: function() {
-    // Add Image: Background
-    const background = this.add.image(700, 500, 'background').setScale(2);
+    this.sound.add('theme').stop();
 
+    // Flash: Background Color: #261447
+    this.cameras.main.flash(1000, 38, 20, 71);
+
+    // Add Image: Background
+    const background = this.add.image(900, 500, 'background').setScale(2);
+
+    // Add Overlay
     const overlay = this.add.renderTexture(0, 0, config.width, config.height);
     overlay.fill(0x261447, 0.75);
 
     // Animate: Background
-    const timelineBackground = this.tweens.timeline({
+    this.tweens.timeline({
       tweens: [{
         targets: background,
-        x: 800,
+        x: 1100,
         duration: 6000,
         ease: 'Power2'
       }, {
         targets: background,
-        x: 810,
+        x: 1110,
         duration: 2000,
         ease: 'Power4',
         yoyo: true,
@@ -87,8 +93,5 @@ export default {
     this.input.on('pointerdown', function () {
       this.scene.switch('menu');
     }, this);
-
-    // Flash: Background Color: #261447
-    this.cameras.main.flash(1000, 38, 20, 71);
   }
 };
