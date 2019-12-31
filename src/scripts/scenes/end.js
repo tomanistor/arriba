@@ -65,7 +65,7 @@ export default {
       },
       stroke: '#261447',
       strokeThickness: 5,
-      fill: '#ffffff'
+      fill: '#2DE2E6'
     }).setOrigin(0.5);
 
     // Add Text: Spacebar

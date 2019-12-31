@@ -11,12 +11,17 @@ export default {
   type: Phaser.AUTO,
   width: 1200,
   height: 600,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+  },
   pixelArt: true,
   title: 'Arriba',
   author: 'Toma Nistor',
-  url: 'https://github.com/tomanistor/arriba',
+  url: '\nhttps://github.com/tomanistor/arriba',
+  version: '1.0.0',
   banner: {
-    text: 'white',
+    text: '#FF3864',
     background: [
       '#FF6C11',
       '#FF3864',
@@ -32,5 +37,6 @@ export default {
     play,
     end
   ],
+  backgroundColor: '#261447',
   themeSong: themeSong
 };

@@ -6,8 +6,6 @@ export default {
   create: function() {
     // console.log('Scene: menu');
 
-    // const thisScene = this;
-
     // Add Image: Background
     const background = this.add.image(900, 500, 'background').setScale(2);
 
@@ -17,7 +15,7 @@ export default {
     // Play Audio: Theme
     config.themeSong.play({
       seek: 64.5,
-      // loop: true
+      loop: true
     });
 
     // Add Text: Title
