@@ -28,12 +28,15 @@ export default {
   },
 
   create: function() {
+    this.add.text(config.width * .5, config.height * .5, 'Game Will Go Here\n\nPress (E) for Game Over', {
+      align: 'center'
+    }).setOrigin(.5);
+
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
       config.themeSong.stop();
       this.scene.stop().run('end');
     }, this);
-
   },
 
   update: function() {
