@@ -39,6 +39,7 @@ export default {
     end
   ],
   backgroundColor: '#261447',
+  audio: {noAudio: true},
   themeSong: themeSong,
   endSong: endSong
 };

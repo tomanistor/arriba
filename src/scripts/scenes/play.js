@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import config from '../config';
+import helpers from '../helpers';
 
 let player,
     score,
@@ -25,6 +26,18 @@ export default {
 
   preload: function() {
     this.add.image(600, 300, 'gradient');
+    this.add.image(100, helpers.randomInteger(80, 175), 'palm1')
+      .setOrigin(0)
+      .setScale(helpers.randomInteger(.35, .5));
+    this.add.image(300, helpers.randomInteger(80, 175), 'palm2')
+      .setOrigin(0)
+      .setScale(helpers.randomInteger(.35, .5));
+    this.add.image(500, helpers.randomInteger(80, 175), 'palm3')
+      .setOrigin(0)
+      .setScale(helpers.randomInteger(.35, .5));
+    this.add.image(700, helpers.randomInteger(80, 175), 'palm4')
+      .setOrigin(0)
+      .setScale(helpers.randomInteger(.35, .5));
   },
 
   create: function() {
