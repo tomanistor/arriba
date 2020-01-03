@@ -25,20 +25,25 @@ export default {
   },
 
   preload: function() {
+    // Add Image: Gradient
     this.add.image(600, 300, 'gradient');
-    // this.add.image(600, 300, 'horizontalLines');
+
+    // Add Image: Horizontal Lines
+    this.add.image(600, 300, 'horizontalLines');
+
+    // Add Images: Palm Trees
     this.add.image(100, helpers.randomInteger(80, 175), 'palm1')
       .setOrigin(0)
-      .setScale(helpers.randomInteger(.70, .80));
+      .setScale(helpers.randomNumber(.55, .90));
     this.add.image(300, helpers.randomInteger(80, 175), 'palm2')
       .setOrigin(0)
-      .setScale(helpers.randomInteger(.70, .80));
+      .setScale(helpers.randomNumber(.55, .90));
     this.add.image(500, helpers.randomInteger(80, 175), 'palm3')
       .setOrigin(0)
-      .setScale(helpers.randomInteger(.70, .80));
+      .setScale(helpers.randomNumber(.55, .90));
     this.add.image(700, helpers.randomInteger(80, 175), 'palm4')
       .setOrigin(0)
-      .setScale(helpers.randomInteger(.70, .80));
+      .setScale(helpers.randomNumber(.55, .90));
   },
 
   create: function() {
