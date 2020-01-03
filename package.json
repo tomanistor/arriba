@@ -15,7 +15,7 @@
     "url": "git+https://github.com/tomanistor/arriba.git"
   },
   "author": "Toma Nistor",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/tomanistor/arriba/issues"
   },
