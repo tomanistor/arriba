@@ -19,7 +19,7 @@ export default {
   pixelArt: true,
   title: 'Arriba',
   author: 'Toma Nistor',
-  url: '\nhttps://github.com/tomanistor/arriba',
+  url: 'https://github.com/tomanistor/arriba',
   version: '1.0.0',
   banner: {
     text: '#FF3864',
@@ -39,7 +39,7 @@ export default {
     end
   ],
   backgroundColor: '#261447',
-  audio: {noAudio: true},
+  // audio: {noAudio: true},
   themeSong: themeSong,
   endSong: endSong
 };
