@@ -20,7 +20,6 @@
     "url": "https://github.com/tomanistor/arriba/issues"
   },
   "dependencies": {
-    "app": "0.1.0",
     "phaser": "^3.17.0"
   },
   "devDependencies": {
