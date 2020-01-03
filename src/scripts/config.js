@@ -16,7 +16,6 @@ export default {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  pixelArt: true,
   title: 'Arriba',
   author: 'Toma Nistor',
   url: 'https://github.com/tomanistor/arriba',

@@ -4,10 +4,10 @@ import song1  from "../../audio/dust-to-dust-by-quixotic.mp3";
 import song2  from "../../audio/flashlight-by-morgan-willis.mp3";
 // import song3  from "../../audio/cruising-by-windows95.mp3";
 import dog    from "../../images/dog-running.png";
-import palm1  from "../../images/palm-1.png";
-import palm2  from "../../images/palm-2.png";
-import palm3  from "../../images/palm-3.png";
-import palm4  from "../../images/palm-4.png";
+import palm1  from "../../images/palm-1.svg";
+import palm2  from "../../images/palm-2.svg";
+import palm3  from "../../images/palm-3.svg";
+import palm4  from "../../images/palm-4.svg";
 
 export default {
   key: 'load',
@@ -40,6 +40,10 @@ export default {
     context.fillRect(0, 0, config.width, config.height);
 
     texture.refresh();
+
+    // Add: Horizontal Lines
+    // const div = this.createElement('div');
+    // const lines = div.style.cssText = "background-image:linear-gradient(to right, #fff 5px, transparent 1px), linear-gradient(#ccc 1px, transparent 1px);"
 
     // Loading Bar
     const rect = new Phaser.Geom.Rectangle(0, config.height - 30, config.width, 30);
