@@ -96,6 +96,7 @@ export default {
       config.endSong.stop();
       this.scene.stop().run('menu');
     }, this);
+
     this.input.on('pointerdown', function () {
       config.endSong.stop();
       this.scene.stop().run('menu');

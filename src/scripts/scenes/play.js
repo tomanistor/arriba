@@ -45,29 +45,39 @@ export default {
 
     // Add Image: Horizontal Lines
     // this.add.image(600, 300, 'horizontalLines');
-
-    // Add Images: Palm Trees
-    palms[0] = this.add.sprite(helpers.randomInteger(-100, 0), helpers.randomInteger(110, 175), 'palm1')
-      .setOrigin(0)
-      .setScale(helpers.randomNumber(.60, .90));
-
-    palms[1] = this.add.sprite(helpers.randomInteger(300, 400), helpers.randomInteger(110, 175), 'palm2')
-      .setOrigin(0)
-      .setScale(helpers.randomNumber(.60, .90));
-
-    palms[2] = this.add.sprite(helpers.randomInteger(600, 700), helpers.randomInteger(110, 175), 'palm3')
-      .setOrigin(0)
-      .setScale(helpers.randomNumber(.60, .90));
-
-    palms[3] = this.add.sprite(helpers.randomInteger(1000, 1100), helpers.randomInteger(110, 175), 'palm4')
-      .setOrigin(0)
-      .setScale(helpers.randomNumber(.60, .90));
   },
 
   create: function() {
     this.add.text(config.width * .5, config.height * .5, 'Game Will Go Here\n\nPress (E) for Game Over', {
-      align: 'center'
+      align: 'center',
+      font: '40px Hardpixel',
+      shadow: {
+        offsetX: -5,
+        offsetY: 5,
+        color: '#261447',
+        stroke: true,
+        fill: true
+      },
+      stroke: '#261447',
+      strokeThickness: 5
     }).setOrigin(.5);
+
+    // Add Images: Palm Trees
+    palms[0] = this.add.sprite(helpers.randomInteger(-100, 0), helpers.randomInteger(110, 175), 'palm1')
+      .setOrigin(0)
+      .setScale(helpers.randomNumber(.65, .90));
+
+    palms[1] = this.add.sprite(helpers.randomInteger(300, 400), helpers.randomInteger(110, 175), 'palm2')
+      .setOrigin(0)
+      .setScale(helpers.randomNumber(.65, .90));
+
+    palms[2] = this.add.sprite(helpers.randomInteger(600, 700), helpers.randomInteger(110, 175), 'palm3')
+      .setOrigin(0)
+      .setScale(helpers.randomNumber(.65, .90));
+
+    palms[3] = this.add.sprite(helpers.randomInteger(1000, 1100), helpers.randomInteger(110, 175), 'palm4')
+      .setOrigin(0)
+      .setScale(helpers.randomNumber(.65, .90));
 
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
