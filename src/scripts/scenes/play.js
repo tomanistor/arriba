@@ -11,12 +11,9 @@ let palms = [];
 function movePalms(palms) {
   palms.forEach(function(palm) {
     palm.x -= 5;
-    console.log('first ' + this);
 
-    if (palm.x < -300) {
-      console.log('second ' + this);
-      console.log('third' + palm);
-      this.resetPalm(palm);
+    if (palm.x < -350) {
+      resetPalm(palm);
     }
   });
 }
@@ -55,16 +52,16 @@ export default {
     // this.add.image(600, 300, 'horizontalLines');
 
     // Add Images: Palm Trees
-    palms[0] = this.add.sprite(0, helpers.randomInteger(110, 175), 'palm1')
+    palms[0] = this.add.sprite(helpers.randomInteger(-100, 0), helpers.randomInteger(110, 175), 'palm1')
       .setOrigin(0)
       .setScale(helpers.randomNumber(.60, .90));
-    palms[1] = this.add.sprite(300, helpers.randomInteger(110, 175), 'palm2')
+    palms[1] = this.add.sprite(helpers.randomInteger(300, 400), helpers.randomInteger(110, 175), 'palm2')
       .setOrigin(0)
       .setScale(helpers.randomNumber(.60, .90));
-    palms[2] = this.add.sprite(600, helpers.randomInteger(110, 175), 'palm3')
+    palms[2] = this.add.sprite(helpers.randomInteger(600, 700), helpers.randomInteger(110, 175), 'palm3')
       .setOrigin(0)
       .setScale(helpers.randomNumber(.60, .90));
-    palms[3] = this.add.sprite(900, helpers.randomInteger(110, 175), 'palm4')
+    palms[3] = this.add.sprite(helpers.randomInteger(1000, 1100), helpers.randomInteger(110, 175), 'palm4')
       .setOrigin(0)
       .setScale(helpers.randomNumber(.60, .90));
 
