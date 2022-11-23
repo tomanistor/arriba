@@ -23,7 +23,10 @@ function resetPalm(palm) {
 
 function jump() {
   if (player.body.blocked.down) {
-    player.setVelocityY(-500);
+    player.play('jump').setVelocityY(-500).setAngle(-15).once('animationcomplete', () => {
+      player.setAngle(10)
+      player.play('run');
+    });
   }
 }
 
@@ -88,12 +91,21 @@ export default {
       .setOrigin(0)
       .setScale(helpers.randomNumber(.65, .90));
 
-    // Create Sprite Animation: Player
+    // Create Sprite Animation: Player Running
     this.anims.create({
       key: 'run',
       frames: this.anims.generateFrameNumbers('dog'),
       frameRate: 12,
-      repeat: -1
+      repeat: -1,
+    });
+
+    // Create Sprite Animation: Player Jumping
+    this.anims.create({
+      key: 'jump',
+      frames: this.anims.generateFrameNumbers('dog', {
+        frames: [6, 7, 8, 0]
+      }),
+      frameRate: 8,
     });
 
     // Create Player
@@ -101,6 +113,11 @@ export default {
       .setBounce(0.2)
       .setCollideWorldBounds(true)
       .play('run');
+
+    // Key Spacebar: Jump
+    this.input.keyboard.on('keydown-SPACE', function() {
+      jump();
+    });
 
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
@@ -112,10 +129,9 @@ export default {
   update: function() {
     movePalms(palms);
 
-    // Key Spacebar: Jump
-    this.input.keyboard.on('keydown-SPACE', function() {
-      jump();
-    });
+    if (player.body.blocked.down) {
+      player.setAngle(0);
+    }
 
     if (gameOver) {
       return this.scene.stop().run('end');
