@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
 import config from "../config";
-import song1  from "../../audio/dust-to-dust-by-quixotic.mp3";
-import song2  from "../../audio/flashlight-by-morgan-willis.mp3";
-// import song3  from "../../audio/cruising-by-windows95.mp3";
+import song1  from "url:../../audio/dust-to-dust-by-quixotic.mp3";
+import song2  from "url:../../audio/flashlight-by-morgan-willis.mp3";
+// import song3  from "url../../audio/cruising-by-windows95.mp3";
 import dog    from "../../images/dog-running.png";
 import palm1  from "../../images/palm-1.svg";
 import palm2  from "../../images/palm-2.svg";

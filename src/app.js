@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import config from './scripts/config';
-import styles from './styles/app';
+import styles from './styles/app.scss';
 
 function newGame() {
   if (game) return;
