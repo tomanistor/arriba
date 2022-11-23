@@ -167,7 +167,7 @@ export default {
     movePalms(palms);
 
     // Control Player
-    [keys.jump, pointer].forEach(key => {
+    [...keys.jump, pointer].forEach(key => {
       if (key.isDown) {
         jump();
       };
