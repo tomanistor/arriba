@@ -5,11 +5,31 @@ import helpers from '../helpers';
 let player,
     score,
     gameOver,
+    camera,
+    keys,
     palms = [];
 
-function movePalms(palms) {
+function movePalms(palms, direction) {
   palms.forEach(function(palm) {
-    palm.x -= 5;
+    if (direction === 'left') {
+      palm.x += 2;
+    }
+
+    if (direction === 'right') {
+      palm.x -= 10;
+    }
+
+    // if (direction === 'down') {
+    //   palm.y += 5;
+    // }
+
+    // if (direction === 'up') {
+    //   palm.y -= 5;
+    // }
+
+    if (!direction) {
+      palm.x -= 5;
+    }
 
     if (palm.x < -350) {
       resetPalm(palm);
@@ -23,9 +43,12 @@ function resetPalm(palm) {
 
 function jump() {
   if (player.body.blocked.down) {
-    player.play('jump').setVelocityY(-500).setAngle(-15).once('animationcomplete', () => {
+    movePalms(palms, 'down');
+
+    player.setAngle(-15).play('jump').setVelocityY(-500).once('animationcomplete', () => {
       player.setAngle(10)
       player.play('run');
+      movePalms(palms, 'up');
     });
   }
 }
@@ -60,7 +83,7 @@ export default {
     // Set World Bounds
     this.physics.world.setBounds(0, 0, config.width, config.height);
 
-    this.add.text(config.width * .5, config.height * .5, 'Game Will Go Here\n\nPress (E) for Game Over', {
+    this.add.text(config.width * .5, config.height * .2, 'Press (Space) to Jump\n\nPress (E) for Quit', {
       align: 'center',
       font: '40px Hardpixel',
       shadow: {
@@ -105,7 +128,7 @@ export default {
       frames: this.anims.generateFrameNumbers('dog', {
         frames: [6, 7, 8, 0]
       }),
-      frameRate: 8,
+      frameRate: 6,
     });
 
     // Create Player
@@ -114,10 +137,20 @@ export default {
       .setCollideWorldBounds(true)
       .play('run');
 
-    // Key Spacebar: Jump
-    this.input.keyboard.on('keydown-SPACE', function() {
-      jump();
+    // Create Keys
+    keys = this.input.keyboard.addKeys({
+      up: 'UP',
+      down: 'DOWN',
+      left: 'LEFT',
+      right: 'RIGHT',
+      space: 'SPACE',
+      w: 'W',
+      a: 'A',
+      s: 'S',
+      d: 'D',
     });
+
+    keys.jump = [keys.space, keys.up, keys.w]
 
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
@@ -128,6 +161,20 @@ export default {
 
   update: function() {
     movePalms(palms);
+
+    keys.jump.forEach(key => {
+      if (key.isDown) {
+        jump();
+      };
+    });
+
+    if (keys.left.isDown || keys.a.isDown) {
+      movePalms(palms, 'left');
+    }
+
+    if (keys.right.isDown || keys.d.isDown) {
+      movePalms(palms, 'right');
+    }
 
     if (player.body.blocked.down) {
       player.setAngle(0);
