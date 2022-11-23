@@ -11,8 +11,6 @@ export default {
   },
 
   create: function() {
-    // console.log('Scene: boot');
-
     // Add Image: Background
     this.add.image(900, 500, 'background').setScale(2);
 

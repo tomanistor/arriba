@@ -22,7 +22,7 @@ function resetPalm(palm) {
 }
 
 function jump() {
-  if (player.body.touching.down) {
+  if (player.body.blocked.down) {
     player.setVelocityY(-500);
   }
 }
@@ -54,8 +54,8 @@ export default {
   },
 
   create: function() {
-    // this.cameras.main.setBounds(0, 0, 1200, 600, 200);
-    // this.physics.world.setBounds(0, 0, 1200, 600, 200);
+    // Set World Bounds
+    this.physics.world.setBounds(0, 0, config.width, config.height);
 
     this.add.text(config.width * .5, config.height * .5, 'Game Will Go Here\n\nPress (E) for Game Over', {
       align: 'center',
@@ -96,16 +96,11 @@ export default {
       repeat: -1
     });
 
-    // Add Sprite: Player
-    player = this.physics.add.sprite(0, 700, 'dog')
+    // Create Player
+    player = this.physics.add.sprite(0, config.height, 'dog')
+      .setBounce(0.2)
       .setCollideWorldBounds(true)
       .play('run');
-
-    // Key Spacebar: Jump
-    this.input.keyboard.on('keydown-SPACE', function() {
-      debugger
-      jump();
-    });
 
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
@@ -116,6 +111,11 @@ export default {
 
   update: function() {
     movePalms(palms);
+
+    // Key Spacebar: Jump
+    this.input.keyboard.on('keydown-SPACE', function() {
+      jump();
+    });
 
     if (gameOver) {
       return this.scene.stop().run('end');

@@ -4,8 +4,6 @@ export default {
   key: 'menu',
 
   create: function() {
-    // console.log('Scene: menu');
-
     // Add Image: Background
     const background = this.add.image(900, 500, 'background').setScale(2);
 
