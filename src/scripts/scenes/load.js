@@ -17,7 +17,12 @@ export default {
     this.add.image(900, 500, 'background').setScale(2);
 
     // Load Images
-    this.load.image('dog', dog);
+    this.load.spritesheet('dog', dog, {
+      frameWidth: 184,
+      frameHeight: 100,
+      startFrame: 0,
+      endFrame: 8
+    });
     this.load.image('palm1', palm1);
     this.load.image('palm2', palm2);
     this.load.image('palm3', palm3);
@@ -59,8 +64,6 @@ export default {
   },
 
   create: function() {
-    // console.log('Scene: load');
-
     // Start Scene: Menu
     this.scene.start('menu');
   }

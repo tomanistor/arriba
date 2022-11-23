@@ -21,6 +21,12 @@ function resetPalm(palm) {
   palm.x = config.width;
 }
 
+function jump() {
+  if (player.body.touching.down) {
+    player.setVelocityY(-500);
+  }
+}
+
 export default {
   key: 'play',
 
@@ -28,7 +34,7 @@ export default {
     default: 'arcade',
     arcade: {
       gravity: {
-        y: 50
+        y: 1000
       },
       debug: false
     }
@@ -48,6 +54,9 @@ export default {
   },
 
   create: function() {
+    // this.cameras.main.setBounds(0, 0, 1200, 600, 200);
+    // this.physics.world.setBounds(0, 0, 1200, 600, 200);
+
     this.add.text(config.width * .5, config.height * .5, 'Game Will Go Here\n\nPress (E) for Game Over', {
       align: 'center',
       font: '40px Hardpixel',
@@ -79,6 +88,25 @@ export default {
       .setOrigin(0)
       .setScale(helpers.randomNumber(.65, .90));
 
+    // Create Sprite Animation: Player
+    this.anims.create({
+      key: 'run',
+      frames: this.anims.generateFrameNumbers('dog'),
+      frameRate: 12,
+      repeat: -1
+    });
+
+    // Add Sprite: Player
+    player = this.physics.add.sprite(0, 700, 'dog')
+      .setCollideWorldBounds(true)
+      .play('run');
+
+    // Key Spacebar: Jump
+    this.input.keyboard.on('keydown-SPACE', function() {
+      debugger
+      jump();
+    });
+
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
       config.themeSong.stop();
@@ -90,9 +118,7 @@ export default {
     movePalms(palms);
 
     if (gameOver) {
-      this.scene.stop().run('end');
-
-      return;
+      return this.scene.stop().run('end');
     }
   }
 };
