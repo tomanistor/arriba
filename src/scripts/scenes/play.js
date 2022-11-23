@@ -7,6 +7,7 @@ let player,
     gameOver,
     camera,
     keys,
+    pointer,
     palms = [];
 
 function movePalms(palms, direction) {
@@ -152,6 +153,9 @@ export default {
 
     keys.jump = [keys.space, keys.up, keys.w]
 
+    // Create Pointer
+    pointer = this.input.activePointer;
+
     // Next Scene: Menu
     this.input.keyboard.on('keydown-E', function() {
       config.themeSong.stop();
@@ -162,7 +166,8 @@ export default {
   update: function() {
     movePalms(palms);
 
-    keys.jump.forEach(key => {
+    // Control Player
+    [keys.jump, pointer].forEach(key => {
       if (key.isDown) {
         jump();
       };
